@@ -14,7 +14,7 @@ composer require "aalfiann/reverser:^1.0"
 ```
 
 ## How to use
-1. Create index.php
+Create new file `index.php`
 ```php
 use aalfiann\Reverser\Handler;
 require_once ('vendor/autoload.php');
@@ -40,7 +40,7 @@ if ($handler->execute()) {
 // close handler
 $handler->close();
 ```
-2. Create .htaccess
+Example apache `.htaccess`
 ```
 RewriteEngine On
 
