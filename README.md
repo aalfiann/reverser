@@ -4,7 +4,7 @@
 [![Downloads](https://img.shields.io/packagist/dt/aalfiann/reverser.svg)](https://packagist.org/packages/aalfiann/reverser)
 [![License](https://img.shields.io/packagist/l/aalfiann/reverser.svg)](https://github.com/aalfiann/reverser/blob/HEAD/LICENSE.md)
 
-Reverse your actual backend behind PHP
+Reversing your actual backend behind PHP.
 
 ## Installation
 

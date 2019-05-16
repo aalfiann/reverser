@@ -1,0 +1,20 @@
+{
+    "name":"aalfiann/reverser",
+    "description":"Reversing your actual backend behind PHP.",
+    "keywords":["reverse", "server", "backend", "rest", "api"],
+    "authors":[
+        {
+            "name": "M ABD AZIZ ALFIAN",
+            "email": "aalfiann@gmail.com",
+            "homepage": "https://github.com/aalfiann",
+            "role": "Developer"
+        }
+    ],
+    "type":"library",
+    "require": {
+        "php": ">=5.6"
+    },
+    "license":"MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
