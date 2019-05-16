@@ -15,6 +15,9 @@
         "php": ">=5.6"
     },
     "license":"MIT",
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "autoload": {
+        "psr-4": {
+            "aalfiann\\Reverser\\": "src/"
+        }
+    }
 }
