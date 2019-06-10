@@ -67,6 +67,10 @@ class Handler
      * @type boolean
      */
     private $restapi;
+    /**
+     * @type boolean
+     */
+    private $printBufferLength = false;
 
     /**
      * Create a new Handler
@@ -80,6 +84,8 @@ class Handler
         if (is_string($options)) {
             $options = array('uri' => $options);
         }
+        if (isset($options['printBufferLength']))
+            $this->printBufferLength = $options['printBufferLength'];
         if (isset($options['forceBuffered']))
             $this->_buffered = true;
         if (isset($options['forceContentType']))
@@ -393,7 +399,11 @@ class Handler
         if ($this->_buffered) {
             $this->_buffer .= $body;
         } elseif ($this->_chunked) {
-            echo dechex($length) . self::RN . $body . self::RN;
+            if($this->printBufferLength){
+                echo dechex($length) . self::RN . $body . self::RN;
+            } else {
+                echo $body;    
+            }
         } else {
             echo $body;
         }
@@ -407,8 +417,10 @@ class Handler
      */
     public function close()
     {
-        if (!$this->_buffered && $this->_chunked) {
-            echo '0' . self::RN . self::RN;
+        if($this->printBufferLength){
+            if (!$this->_buffered && $this->_chunked) {
+                echo '0' . self::RN . self::RN;
+            }
         }
         curl_close($this->_curlHandle);
     }
